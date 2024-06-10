@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique - Ma WebApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Vos styles personnalisés peuvent être ajoutés ici */
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<!-- Barre de navigation -->
+<nav class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-lg font-bold">Ma WebApp</div>
+        <div class="md:flex items-center space-x-4">
+            <a href="#" class="hover:bg-gray-700 px-3 py-2 rounded">Accueil</a>
+            <a href="#" class="hover:bg-gray-700 px-3 py-2 rounded">Favoris</a>
+            <a href="#" class="hover:bg-gray-700 px-3 py-2 rounded">Profil</a>
+            <button id="theme-toggle" class="p-2 bg-gray-700 rounded-full focus:outline-none">
+                <!-- Icônes de basculement de thème -->
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenu principal -->
+<div class="container mx-auto mt-8">
+    <h1 class="text-2xl font-bold mb-4">Historique</h1>
+    <!-- Liste d'historique -->
+    <ul class="divide-y divide-gray-300">
+        <!-- Exemple d'élément d'historique -->
+        <li class="py-4">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <img class="h-12 w-12 rounded-full" src="avatar-chatgpt.jpg" alt="ChatGPT Avatar">
+                </div>
+                <div class="ml-3">
+                    <p class="text-lg font-medium">Bonjour !</p>
+                    <p class="text-gray-500">Je suis ChatGPT, comment puis-je vous aider aujourd'hui ?</p>
+                    <p class="text-gray-500">27 mai 2024, 10:00</p>
+                </div>
+            </div>
+        </li>
+        <!-- Fin de l'exemple -->
+        <!-- Exemple d'un autre élément d'historique -->
+        <li class="py-4">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <img class="h-12 w-12 rounded-full" src="avatar-chatgpt.jpg" alt="ChatGPT Avatar">
+                </div>
+                <div class="ml-3">
+                    <p class="text-lg font-medium">Quelle est votre question ?</p>
+                    <p class="text-gray-500">Je suis là pour vous aider, n'hésitez pas à me poser des questions !</p>
+                    <p class="text-gray-500">27 mai 2024, 10:05</p>
+                </div>
+            </div>
+        </li>
+        <!-- Fin de l'exemple -->
+    </ul>
+</div>
+
+</body>
+</html>

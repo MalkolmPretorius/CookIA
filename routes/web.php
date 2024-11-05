@@ -2,9 +2,10 @@
 
 use Inertia\Inertia;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ConversationController;
+use App\Models\Conversation;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,29 +23,26 @@ Route::get('/', function () {
     return Inertia::render('ChatBox');
 })->middleware('auth')->name('pages.home');
 
+// Route::get('/dashboard', function () {
+//     return Inertia::render('ChatBox');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::post('/favorites', [FavoriteController::class, 'store'])->middleware(['auth', 'verified'])->name('favorites.store');
+Route::get('/favorites', [FavoriteController::class, 'index'])->middleware('auth')->name('favorites.index');
+Route::delete('/favorites/{id}', [FavoriteController::class, 'destroy'])->middleware('auth')->name('favorites.destroy');
+
+
+Route::post('/conversation/store', [ConversationController::class, 'store'])->middleware('auth');
 
 
 
 
 
 
-
-
-
-Route::post('/favorites', [FavoriteController::class, 'store'])->name('favorites.store');
-
-Route::get('/addRecipe', [RecipeController::class, 'create'])->middleware(['auth', 'verified'])->name('recipes.addRecipes');
-
-Route::post('/recipes', [RecipeController::class, 'store'])->middleware(['auth', 'verified'])->name('recipes.store');
-
-Route::get('/recipes/{recipe}/editRecipe', [RecipeController::class, 'edit'])->middleware(['auth', 'verified'])->name('recipes.editRecipes');
-
-Route::post('/recipes/{recipe}/update', [RecipeController::class, 'updateRecipe'])->middleware(['auth', 'verified'])->name('recipes.updateRecipe');
-
-Route::delete('/recipes/{recipe}/delete', [RecipeController::class, 'deleteRecipe'])->middleware(['auth', 'verified'])->name('recipes.deleteRecipe');
 
 Route::get('/favorite', function () {
-    return view('favorite._index');
+    return view('Favorite._index');
 })->name('favorite._index');
 
 Route::get('/recipes', function () {
@@ -63,9 +61,7 @@ Route::get('/users/{user}/{slug}', function (\App\Models\User $user) {
     return view('users.show', compact('user'));
 })->name('users.show');
 
-Route::get('/dashboard', function () {
-    return view('pages.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

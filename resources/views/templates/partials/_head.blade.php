@@ -2,7 +2,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CookIA- @yield('title')</title>
-    <link rel="icon" type="image/png" href="images/favico.png" />
+    <link rel="icon" type="image/png" href="images/logo_cookia1.png" sizes="196x196"/>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@100;400;900&display=swap"
@@ -26,18 +26,5 @@
     <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
     
     @vite('resources/js/app.js')
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-      }
-      .creepster {
-        font-family: "Creepster", system-ui;
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-      }
-
-      .noUi-connect {
-        background: #516ba4;
-      }
-    </style>
+    
   </head>

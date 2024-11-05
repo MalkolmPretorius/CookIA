@@ -1,7 +1,7 @@
+// Pas besoin d'utiliser dotenv avec Vite, les variables VITE_ sont automatiquement chargées
 import { OpenAI } from "openai";
 
 export const openai = new OpenAI({
-  apiKey : "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",
+  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true
-}
-);
+});

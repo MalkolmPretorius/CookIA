@@ -40,9 +40,11 @@ class User extends Authenticatable
         return $this->hasMany(Favorite::class);
     }
 
-    public function chatHistory()
+    public function Conversations()
     {
-        return $this->hasMany(ChatHistory::class);
+        return $this->hasMany(Conversation::class);
     }
+    
+    
 }
 

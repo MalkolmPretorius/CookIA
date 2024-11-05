@@ -5,7 +5,7 @@
     @include('templates.partials._head')
 </head>
 
-<body class="bg-gray-800 text-white font-sans">
+<body class="  font-sans">
     @if (request()->is('favorite')||request()->is('profile'))
         @include('templates.partials._header')
     @endif
